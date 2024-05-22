@@ -1,3 +1,4 @@
+import { Colors } from '@/constants/Colors';
 import React, { useState, useRef } from 'react';
 import { View, TextInput, Text, StyleSheet, ActivityIndicator, TouchableOpacity } from 'react-native';
 
@@ -120,7 +121,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
     marginLeft: 15,
     zIndex: 1,
-    color: 'yellow',
+    color: 'white',
   },
   input: {
     flex: 1,
@@ -138,25 +139,28 @@ const styles = StyleSheet.create({
   },
   underline: {
     borderBottomWidth: 1,
-    borderBottomColor: 'black',
+    borderBottomColor: Colors.lightprimaryColor,
     paddingVertical: 9,
   },
   
   filled: {
-    backgroundColor: 'white',
+    backgroundColor: "#fceaea",
     paddingVertical: 9,
+    borderRadius: 10,
   
   },
   outline: {
     backgroundColor: 'white',
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: Colors.lightprimaryColor,
     paddingVertical: 9,
+    borderRadius: 10,
   },
   unstyled: {},
   rounded: {
     borderRadius: 10,
     borderWidth: 1,
+    borderColor: Colors.lightprimaryColor,
     paddingVertical: 9,
   },
 });

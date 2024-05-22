@@ -1,5 +1,6 @@
 import React, { FC, useState } from "react";
 import { Pressable, View, Text, StyleSheet } from "react-native";
+import { Colors } from "@/constants/Colors";
 
 interface ButtonProps {
   size?: "xs" | "sm" | "md" | "lg" | "xl" | "zxl";
@@ -100,22 +101,22 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     paddingHorizontal: 16,
     paddingVertical: 10,
-    borderWidth: 1,
+    borderWidth: 0,
     marginHorizontal: "13%",
     borderRadius: 4,
   },
   solid: {
-    backgroundColor: "blue",
+    backgroundColor: Colors.primaryColor,
   },
   subtle: {
     backgroundColor: "lightgray",
   },
   outline: {
     borderWidth: 1,
-    borderColor: "blue",
+    borderColor: Colors.lightprimaryColor,
   },
   link: {
-    color: "blue",
+    color: Colors.primaryColor,
   },
   ghost: {
     backgroundColor: "transparent",
