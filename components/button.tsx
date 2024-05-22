@@ -2,7 +2,7 @@ import React, { FC, useState } from "react";
 import { Pressable, View, Text, StyleSheet } from "react-native";
 
 interface ButtonProps {
-  size?: "xs" | "sm" | "md" | "lg";
+  size?: "xs" | "sm" | "md" | "lg" | "xl" | "zxl";
   variant?: "solid" | "subtle" | "outline" | "link" | "ghost" | "unstyled";
   onPress?: () => void;
   children: React.ReactNode;
@@ -58,7 +58,28 @@ const Button: FC<ButtonProps> = ({
         variantStyles = styles.solid; // Default to solid
     }
 
-    const sizeStyles = styles[size as keyof typeof styles];
+    let sizeStyles;
+
+    switch (size) {
+      case "xs":
+        sizeStyles = styles.xs;
+        break;
+      case "sm":
+        sizeStyles = styles.sm;
+        break;
+      case "md":
+        sizeStyles = styles.md;
+        break;
+      case "lg":
+        sizeStyles = styles.lg;
+      case "xl":
+        sizeStyles = styles.xl;
+      case "zxl":
+        sizeStyles = styles.zxl;
+        break;
+      default:
+        sizeStyles = styles.md; // Default to medium
+    }
 
     return [baseStyles, variantStyles, sizeStyles, disabled && styles.disabled];
   };
@@ -76,8 +97,11 @@ const styles = StyleSheet.create({
   button: {
     alignItems: "center",
     justifyContent: "center",
+    flexDirection: "row",
     paddingHorizontal: 16,
     paddingVertical: 10,
+    borderWidth: 1,
+    marginHorizontal: "13%",
     borderRadius: 4,
   },
   solid: {
@@ -110,6 +134,43 @@ const styles = StyleSheet.create({
   icon: {
     marginRight: 10,
   },
+  xs:{
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    fontSize: 12,
+    borderRadius: 2,
+  },
+  sm:{
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    fontSize: 14,
+    borderRadius: 4,
+  },
+  md:{
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    fontSize: 16,
+    borderRadius: 6,
+  },
+  lg:{
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    fontSize: 18,
+    borderRadius: 8,
+  },
+  xl:{
+    paddingHorizontal: 24,
+    paddingVertical: 16,
+    fontSize: 20,
+    borderRadius: 10,
+  },
+  zxl:{
+    paddingHorizontal: 28,
+    paddingVertical: 20,
+    fontSize: 22,
+    borderRadius: 12,
+  },
+  
 });
 
 export default Button;
