@@ -1,16 +1,14 @@
-import { Slot, SplashScreen, Stack, useRouter, useSegments } from 'expo-router';
-
-
+import { Slot, SplashScreen, Stack, useRouter, useSegments } from "expo-router";
 
 const InitialLayout = () => {
-
   return (
-    <Stack>
-      <Stack.Screen name="index" options={{ headerShown: true }} />
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack.Screen name="login" options={{ headerShown: false }} />
+      <Stack.Screen name="register" options={{ headerShown: false }} />
     </Stack>
   );
-}
-
+};
 
 const RootLayout = () => {
   return (
@@ -18,6 +16,6 @@ const RootLayout = () => {
       <InitialLayout />
     </>
   );
-}
+};
 
-export default RootLayout
+export default RootLayout;

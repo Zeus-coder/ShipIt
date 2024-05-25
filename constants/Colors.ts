@@ -25,4 +25,5 @@ export const Colors = {
   },
   primaryColor: '#D93855',
   lightprimaryColor: '#DC5759',
+  morelighterprimaryColor:'#f2d2d2',
 };

@@ -1,14 +1,19 @@
-import { View, StyleSheet } from 'react-native';
-import {MaterialIcons} from "@expo/vector-icons";
-import Button from '@/components/button';
-import Input from '@/components/input';
-import { useState } from 'react';
+import { View, StyleSheet } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
+import Button from "@/components/button";
+import Input from "@/components/input";
+import * as Animatable from "react-native-animatable";
+import { useState } from "react";
+import { AnimatedIntro } from "@/components/AnimatedIntro";
+import { BottomLoginSheet } from "@/components/BottomLoginSheet";
 const Page = () => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
   return (
     <View style={styles.container}>
-      <Button size="md" variant="solid" icon={<MaterialIcons name="add" size={24} color="black" />} onPress={() => console.log('pressed')}>Hello</Button>
-      <Input value={value} onChangeText={(text) => setValue(text)} size="xl" variant='rounded' placeholder="Placeholder" icon={<MaterialIcons name="add" size={24} color="black" />} />
+      <AnimatedIntro />
+      <Animatable.View animation="fadeInUp" duration={1200} easing={"ease-out"}>
+        <BottomLoginSheet />
+      </Animatable.View>
     </View>
   );
 };

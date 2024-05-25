@@ -66,17 +66,17 @@ const Input: React.FC<InputProps> = ({
 
     switch (size) {
       case 'xs':
-        return { ...baseStyles, fontSize: 12,   paddingLeft: icon ? 40 : 0, paddingRight: 25,};
+        return { ...baseStyles, fontSize: 12,   paddingLeft: icon ? 40 : 15, paddingRight: 25,};
       case 'sm':
-        return { ...baseStyles, fontSize: 14, paddingLeft: icon ? 40 : 0, paddingRight: 25, };
+        return { ...baseStyles, fontSize: 14, paddingLeft: icon ? 40 : 15, paddingRight: 25, };
       case 'md':
-        return { ...baseStyles, fontSize: 16, paddingLeft: icon ? 40 : 0, paddingRight: 25, };
+        return { ...baseStyles, fontSize: 16, paddingLeft: icon ? 40 : 15, paddingRight: 25, };
       case 'lg':
-        return { ...baseStyles, fontSize: 18, paddingLeft: icon ? 40 : 0, paddingRight: 25, };
+        return { ...baseStyles, fontSize: 18, paddingLeft: icon ? 40 : 15, paddingRight: 25, };
       case 'xl':
-        return { ...baseStyles, fontSize: 20 , paddingLeft: icon ? 40 : 0, paddingRight: 25,};
+        return { ...baseStyles, fontSize: 20 , paddingLeft: icon ? 40 : 15, paddingRight: 25,};
       case '2xl':
-        return { ...baseStyles, fontSize: 24, paddingLeft: icon ? 40 : 0, paddingRight: 25, };
+        return { ...baseStyles, fontSize: 24, paddingLeft: icon ? 40 : 15, paddingRight: 25, };
       default:
         return baseStyles;
     }
@@ -110,8 +110,8 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 10,
-    marginHorizontal: "13%",
+    marginBottom: 20,
+    // marginHorizontal: "13%",
   },
   loading: {
     marginRight: 10,

@@ -6,8 +6,10 @@ import Button from "@/components/button";
 import { useState } from "react";
 import { useRouter } from "expo-router";
 
-const Login = () => {
+const Register = () => {
   const router = useRouter();
+  const [fullname, setFullname] = useState("");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -37,16 +39,18 @@ const Login = () => {
 
         <View style={{ padding: 20, gap: 20, }}>
           <View>
-            <Text style={{ color: "black", fontSize: 40, fontWeight: "bold" }}>Login</Text>
+            <Text style={{ color: "black", fontSize: 40, fontWeight: "bold" }}>Register Now</Text>
           </View>
           <View>
+            <Input size="lg" placeholder="Fullname" variant="outline"  value={fullname} onChangeText={setFullname}/>
+            <Input size="lg" placeholder="Username" variant="outline"  value={username} onChangeText={setUsername}/>
             <Input size="lg" placeholder="Email" variant="outline"  value={email} onChangeText={setEmail}/>
             <Input size="lg" placeholder="Password" variant="outline" value={password} onChangeText={setPassword}/>
           </View>
         </View>
 
         <View  style={{ padding: 20, gap: 20 ,flex:1,justifyContent: "flex-end", }}>
-          <Button size="lg" variant="solid" onPress={() => {router.push('/home')}}>Login</Button>
+          <Button size="lg" variant="solid" onPress={() => {router.push('/home')}}>Register</Button>
         </View>
       </View>
       </KeyboardAvoidingView>
@@ -69,4 +73,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default Register

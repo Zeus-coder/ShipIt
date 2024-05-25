@@ -10,6 +10,7 @@ interface ButtonProps {
   loading?: React.ReactNode;
   icon?: React.ReactNode;
   disabled?: boolean;
+  style?:{}
 }
 
 const Button: FC<ButtonProps> = ({
@@ -20,6 +21,7 @@ const Button: FC<ButtonProps> = ({
   loading,
   icon,
   disabled,
+  style
 }) => {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -86,7 +88,7 @@ const Button: FC<ButtonProps> = ({
   };
 
   return (
-    <Pressable disabled={disabled} onPress={handlePress} style={getStyles()}>
+    <Pressable disabled={disabled} onPress={handlePress} style={[getStyles(), style]}>
       {loading && <View style={styles.loading}>{loading}</View>}
       {icon && <View style={styles.icon}>{icon}</View>}
       <Text style={styles.text}>{children}</Text>
@@ -102,7 +104,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 10,
     borderWidth: 0,
-    marginHorizontal: "13%",
+    // marginHorizontal: "13%",
     borderRadius: 4,
   },
   solid: {
