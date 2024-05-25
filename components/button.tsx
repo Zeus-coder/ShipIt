@@ -27,10 +27,10 @@ const Button: FC<ButtonProps> = ({
 
   const handlePress = () => {
     if (onPress && !disabled) {
-      setIsLoading(true); // Simulate loading state for demonstration
-      Promise.resolve(onPress()) // Ensure onPress returns a Promise
-        .then(() => setIsLoading(false)) // Clear loading state after action
-        .catch(() => setIsLoading(false)); // Clear loading state on error
+      setIsLoading(true);
+      Promise.resolve(onPress())
+        .then(() => setIsLoading(false)) 
+        .catch(() => setIsLoading(false)); 
     }
   };
 
@@ -58,7 +58,7 @@ const Button: FC<ButtonProps> = ({
         variantStyles = {};
         break;
       default:
-        variantStyles = styles.solid; // Default to solid
+        variantStyles = styles.solid; 
     }
 
     let sizeStyles;
@@ -81,7 +81,7 @@ const Button: FC<ButtonProps> = ({
         sizeStyles = styles.zxl;
         break;
       default:
-        sizeStyles = styles.md; // Default to medium
+        sizeStyles = styles.md; 
     }
 
     return [baseStyles, variantStyles, sizeStyles, disabled && styles.disabled];
