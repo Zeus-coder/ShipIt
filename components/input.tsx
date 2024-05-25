@@ -7,12 +7,12 @@ interface InputProps {
   placeholder?: string;
   variant?: 'outline' | 'filled' | 'underlined' | 'unstyled' | 'rounded';
   isLoading?: boolean;
-  icon?: React.ReactElement<any>; // Type for custom Icon component
+  icon?: React.ReactElement<any>; 
   isPassword?: boolean;
   isRequired?: boolean;
   value: string;
   onChangeText: (text: string) => void;
-  validation?: (value: string) => string | null; // Function to validate input
+  validation?: (value: string) => string | null; 
 }
 
 const Input: React.FC<InputProps> = ({
@@ -96,7 +96,7 @@ const Input: React.FC<InputProps> = ({
         onChangeText={handleOnChange}
         onBlur={() => {
           if (validation && isRequired && !value) {
-            setHasError(true); // Set error if required and empty on blur
+            setHasError(true); 
           }
         }}
       />
