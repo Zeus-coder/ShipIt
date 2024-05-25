@@ -1,12 +1,12 @@
 import { View, Text, Image, FlatList } from "react-native";
 import React from "react";
-import { ShipmentItem } from "@/components/ShipmentItem";
+import { ProviderItem } from "@/components/ProviderItem";
 import { useRouter } from "expo-router";
 
 const index = () => {
   const router = useRouter();
 
-  const handleSingleDelivery = ({ item }: any) => {
+  const handleSingleProvider = ({ item }: any) => {
     router.push(`/deliveryDetails/a`);
   }
 
@@ -15,7 +15,7 @@ const index = () => {
       <View style={{ flex: 1 }}>
         <FlatList
           data={[{ key: "a" }, { key: "b" }, { key: "c" }, { key: "d" }, { key: "e" }, { key: "f" }, { key: "g" }, { key: "h" }]}
-          renderItem={({ item }) => <ShipmentItem handleSingleDelivery={handleSingleDelivery} />}
+          renderItem={({ item }) => <ProviderItem handleSingleProvider={handleSingleProvider} />}
         
         />
       </View>
